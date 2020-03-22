@@ -108,11 +108,13 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
 			<scope>provided</scope>
 		</dependency>
 
-		<dependency>
-    <groupId>org.apache.maven.plugins</groupId>
-    <artifactId>maven-resources-plugin</artifactId>
-    <version>2.5</version>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.6</version>
 </dependency>
+
 
 	</dependencies>
 	
