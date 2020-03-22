@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+/* 
 The MIT License (MIT)
 Copyright (c) 2015 Andrei Gonçalves Ribas <andrei.g.ribas@gmail.com>
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -17,19 +16,31 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
--->
-<wls:weblogic-web-app 
-	xmlns:wls="http://xmlns.oracle.com/weblogic/weblogic-web-app" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://xmlns.oracle.com/weblogic/weblogic-web-app http://xmlns.oracle.com/weblogic/weblogic-web-app/1.4/weblogic-web-app.xsd">
-	<wls:session-descriptor>
-		<wls:cookie-path>/h2-weblogic12c-datasource-example</wls:cookie-path>
-	</wls:session-descriptor>
-	<wls:container-descriptor>
-		<wls:filter-dispatched-requests-enabled>true</wls:filter-dispatched-requests-enabled>
-		<wls:allow-all-roles>true</wls:allow-all-roles>
-	</wls:container-descriptor>
-	<wls:context-root>h2-weblogic12c-datasource-example</wls:context-root>
-    <wls:weblogic-version>12.1.2</wls:weblogic-version>
+*/
+package com.ribas.andrei.util;
+import junit.framework.TestCase;
 
-</wls:weblogic-web-app>
+import org.junit.Test;
+
+/**
+ * @author Andrei Gonçalves Ribas <andrei.g.ribas@gmail.com>
+ *
+ */
+public class PropertiesUtilsTest {
+
+	@Test
+	public void testGetDataSourceJndiName() {
+		TestCase.assertEquals("datasource.h2", PropertiesUtils.getDataSourceJndiName());
+	}
+
+	@Test
+	public void testGetWeblogicContextFactory() {
+		TestCase.assertEquals("weblogic.jndi.WLInitialContextFactory", PropertiesUtils.getWeblogicContextFactory());
+	}
+
+	@Test
+	public void testGetWeblogicContextProviderUrl() {
+		TestCase.assertEquals("t3://localhost:7001", PropertiesUtils.getWeblogicContextProviderUrl());
+	}
+
+}
