@@ -50,11 +50,12 @@
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
             </plugin>
-         
+<!--			
                 <configuration>
                     <middlewareHome>${oracleMiddlewareHome}</middlewareHome>
                 </configuration>
                 <executions>
+-->				
                     <!--Deploy the application to the server-->
                     <execution>
                         <phase>pre-integration-test</phase>
